@@ -33,7 +33,7 @@ honestly whether a rule adds value.
 - **Fair benchmark.** Every result is shown next to buy & hold, because a
   strategy that underperforms just holding the stock isn't actually good.
 - **Risk-adjusted metrics.** Reports CAGR, annualized Sharpe ratio, and max
-  drawdown — not just total return.
+  drawdown  not just total return.
 
 ---
 
