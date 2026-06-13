@@ -1,7 +1,7 @@
 # 📈 Moving-Average Crossover Backtester
 
 A clean, honest backtesting engine that tests a classic **SMA crossover**
-trading strategy against a simple buy-and-hold benchmark — written in Python
+trading strategy against a simple buy & hold benchmark written in Python
 with `pandas`, `numpy`, and `yfinance`.
 
 Built as a learning project at the intersection of **machine learning,
@@ -11,26 +11,26 @@ Quantitative Economics student at the University at Buffalo.
 ![Example backtest](backtest.png)
 
 > *Example: AAPL with a 50/200-day SMA crossover. Green/red markers show
-> entries and exits; the bottom panel compares strategy equity vs. buy-and-hold.*
+> entries and exits; the bottom panel compares strategy equity vs. buy & hold.*
 
 ---
 
 ## The strategy
 
-A textbook trend-following rule:
+A textbook trend following rule:
 
 - **Go long** when the short moving average rises above the long moving average.
 - **Go to cash** when it falls back below.
 
-It's deliberately simple — the point isn't to beat the market, it's to build
+It's deliberately simple the point isn't to beat the market, it's to build
 a backtesting framework that's **methodologically correct** and to measure
 honestly whether a rule adds value.
 
 ### What it does right
-- **No look-ahead bias.** Signals are computed on day *t* but acted on day
+- **No look ahead bias.** Signals are computed on day *t* but acted on day
   *t+1* (`signal.shift(1)`), so the backtest never trades on information it
   couldn't have known in real time.
-- **Fair benchmark.** Every result is shown next to buy-and-hold, because a
+- **Fair benchmark.** Every result is shown next to buy & hold, because a
   strategy that underperforms just holding the stock isn't actually good.
 - **Risk-adjusted metrics.** Reports CAGR, annualized Sharpe ratio, and max
   drawdown — not just total return.
@@ -76,9 +76,9 @@ Max drawdown            -45.6%        -38.5%
 ```
 
 *(Numbers depend on ticker and dates. The honest takeaway here: over this
-period the crossover strategy **underperformed** simply holding AAPL — lower
+period the crossover strategy **underperformed** simply holding AAPL lower
 return, similar drawdown. That's exactly the kind of result a correct backtest
-is meant to surface, instead of a curve-fit success story. The framework is
+is meant to surface, instead of a curve fit success story. The framework is
 the deliverable; the strategy is just the first thing to test with it.)*
 
 ---
